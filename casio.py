@@ -82,8 +82,27 @@ if __name__ == "__main__":
     magic(5, (lambda a, b: a == b), 5)
     
     tokens = addX(tokens, 2)
-    
     print(tokens)
+    
+    i = 0
+    length = len(tokens)
+    
+    op = []
+    nums = []
+    
+    while i < length:
+        if i<length and not(isinstance(tokens[i], int)):
+            op.append(tokens[i])
+        else:
+            nums.append(tokens[i])
+        i += 1
+        
+    print(nums, op)            
+    
+    
+        
+    
+
     
     
     
