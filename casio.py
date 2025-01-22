@@ -4,7 +4,6 @@ Created on Wed Jan 22 21:42:13 2025
 
 @author: cookito
 """
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -25,38 +24,71 @@ def draw_graph(f):
     plt.grid(True)
     
 def isOperator(car):
-    return car in "()+-\*"
+    return car in "+-\*"
 
-def lexeur(chaine):
-    tokens = []
-    
-    i = 0
-    
-    
-    
+def isVar(car):
+    return car == 'x'
 
-if __name__ == "__main__":
-    chaine = "22x+2"
-    
+def lexer(chaine):
     tokens = []
-    
     i = 0
+    length = len(chaine)
     
-    while i < len(chaine) :
+    while i < length:
         if chaine[i].isdigit():
             num = []
-            while (chaine[i].isdigit() and i < len(chaine)):
+            while (i < length and chaine[i].isdigit()):
                 num.append(chaine[i])
                 i += 1
             tokens.append(int(''.join(num)))
-            break
+        if (i < length and isOperator(chaine[i])):
+            tokens.append(chaine[i])
+        if (i < length and isVar(chaine[i])):
+            tokens.append(chaine[i])
+        i += 1
+    return tokens
+
+def magic(left, op, right):
+    return op(left, right)
+
+def multiply(a, b):
+    return a * b
+
+def addX(tokens, x):
+    new_tokens = []
+    i = 0
+    length = len(tokens)
+    
+    while i < length:
+        if isVar(tokens[i]):
+            if (i-1 >= 0 and isinstance(tokens[i-1], int)):
+                new_tokens.pop()
+                new_tokens.append(multiply(tokens[i-1] , x))
+        else:
+            new_tokens.append(tokens[i])
+            
         i += 1
         
+    return new_tokens
+
+def parser(tokens):
+    pass
+                
+
+if __name__ == "__main__":
+    chaine = "22x+2"
+    tokens = lexer(chaine)
+
+    magic(5, (lambda a, b: a == b), 5)
+    
+    tokens = addX(tokens, 2)
+    
     print(tokens)
-                
-                
     
     
+    
+
+
     
     
     
