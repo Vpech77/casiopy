@@ -76,12 +76,16 @@ def parser(tokens):
                 
 
 if __name__ == "__main__":
-    chaine = "22x+2"
+    print("################## EQUATION ######################")
+    
+    chaine = "22x+256+45"
+    print(chaine)
     tokens = lexer(chaine)
 
     magic(5, (lambda a, b: a == b), 5)
     
     tokens = addX(tokens, 2)
+    print("################## TOKENS ######################")
     print(tokens)
     
     i = 0
@@ -96,7 +100,8 @@ if __name__ == "__main__":
         else:
             nums.append(tokens[i])
         i += 1
-        
+    
+    print("################## NUM et OPERATOR ######################")
     print(nums, op)            
     
     
