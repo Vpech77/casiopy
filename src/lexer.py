@@ -13,8 +13,8 @@ def isVar(car):
 
 def clean_string(chaine):
     for i in range(len(chaine)):
-        if chaine[i].isdigit() or isVar(chaine[i]):
-            return chaine[i:]
+        if chaine[i] == '=':
+            return chaine[i:].replace(' ', '')
 
 def lexer_tokens(chaine):
     tokens = []
