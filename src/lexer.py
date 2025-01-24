@@ -6,7 +6,7 @@ Created on Thu Jan 23 23:46:58 2025
 """
 
 def isOperator(car):
-    return car in "+-\*()"
+    return car in "+-/*()"
 
 def isVar(car):
     return car == 'x'
@@ -15,6 +15,7 @@ def clean_string(chaine):
     for i in range(len(chaine)):
         if chaine[i] == '=':
             return chaine[i:].replace(' ', '')
+    return chaine
 
 def lexer_tokens(chaine):
     tokens = []

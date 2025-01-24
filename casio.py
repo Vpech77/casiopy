@@ -28,6 +28,15 @@ if __name__ == "__main__":
     
     chaine = "y = 5*x*x + 3*x"
     draw_graph(chaine)
+    
+    chaine = "(23+78)*26"
+    res = parser_string(chaine)
+    print(res)
+    
+    chaine = "12 + (3*(4+5)+12) / 2"
+    res = parser_string(chaine)
+    print(res)
+    
 
             
     

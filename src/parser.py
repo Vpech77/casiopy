@@ -25,6 +25,10 @@ def F(tokens, pos):
         pos += 1
         next_val, pos = N(tokens, pos)
         val *= next_val
+    while pos < len(tokens) and tokens[pos] == '/':
+        pos += 1
+        next_val, pos = N(tokens, pos)
+        val /= next_val
     return val, pos
 
 # N = n | (A)
@@ -38,7 +42,7 @@ def N(tokens, pos):
         if pos < len(tokens) and tokens[pos] == ')':
             return val, pos + 1
 
-def parser_string(chaine, x):
+def parser_string(chaine, x=1):
     tokens = lexer_tokens(chaine)
     tokens = addX(tokens, x)
     pos = 0
