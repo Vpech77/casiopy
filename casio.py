@@ -23,24 +23,35 @@ def draw_graph(chaine):
 
 
 if __name__ == "__main__":
+    print("################# CALCUL #####################")
     chaine = "y = 22 * x + 3"
+    print(chaine)
+    print("draw graph")
     draw_graph(chaine)
     
+    print("\n################# CALCUL #####################")
     chaine = "y = 5*x*x + 3*x"
+    print(chaine)
+    print("draw graph")
     draw_graph(chaine)
     
+    print("\n################# CALCUL #####################")
     chaine = "(23+78)*26"
     res = parser_string(chaine)
-    print(res)
+    print(chaine)
+    print("result", res)
     
+    print("\n################# CALCUL #####################")
     chaine = "12 + (3*(4+5)+12) / 2"
     res = parser_string(chaine)
-    print(res)
+    print(chaine)
+    print("result", res)
     
+    print("\n################# CALCUL #####################")
     chaine = "12 - 2"
     res = parser_string(chaine)
-    print(res)
-            
+    print(chaine)
+    print("result", res)
     
 
     
