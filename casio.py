@@ -37,7 +37,9 @@ if __name__ == "__main__":
     res = parser_string(chaine)
     print(res)
     
-
+    chaine = "12 - 2"
+    res = parser_string(chaine)
+    print(res)
             
     
 

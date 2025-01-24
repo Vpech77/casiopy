@@ -15,6 +15,10 @@ def A(tokens, pos):
         pos += 1
         next_val, pos = F(tokens, pos)
         val += next_val
+    while pos < len(tokens) and tokens[pos] == '-':
+        pos += 1
+        next_val, pos = F(tokens, pos)
+        val -= next_val
     return val, pos
 
 # F = N (* N)*
