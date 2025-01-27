@@ -1,2 +1,3 @@
-# casiopy
+# 📈 Casiopy 📈
+
 python graph calculator 
